@@ -1,6 +1,6 @@
 var http = require('http');
 
-function request_account(info, option) {
+function request_account(info, options) {
         var req = http.request(options, function (res) {  
             console.log('STATUS: ' + res.statusCode);  
             console.log('HEADERS: ' + JSON.stringify(res.headers));  
@@ -20,17 +20,21 @@ function request_account(info, option) {
 
 exports.get_account = function() {
     var options = {  
-         hostname: '192.168.217.128',  
-         port: 12345,  
-         path: '/account',  
+        hostname: '192.168.217.128',  
+        port: 12345,  
+        path: '/account',  
         method: 'GET'  
     };
     var info = {};
     while (true){
-        request_account(info, option);
+        console.log("get");
+        request_account(info, options);
+        console.log('info-before:' + info.admin);
         if (info.admin){
+            console.log('info: ' + info);
            return info; 
         }
+        break;
     }
 };
 
@@ -38,3 +42,4 @@ exports.get_account = function() {
 exports.release_account = function(){
     console.log("hello world");
 };
+

@@ -1,4 +1,4 @@
-var http = require('http');
+/*var http = require('http');
   
 var options = {  
     hostname: '192.168.217.128',  
@@ -20,4 +20,9 @@ req.on('error', function (e) {
     console.log('problem with request: ' + e.message);  
 });  
             
-req.end(); 
+req.end(); */
+
+var ac = require('./request-acc.com');
+
+ac.get_account();
+
