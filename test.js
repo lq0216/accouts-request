@@ -22,7 +22,9 @@ req.on('error', function (e) {
             
 req.end(); */
 
-var ac = require('./request-acc.com');
+var res = require('./account-get.com');
 
-ac.get_account();
+var info = res.get_account();
+
+console.log("info##:" + info);
 
