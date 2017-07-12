@@ -34,6 +34,7 @@ var get_account = async function(){
         await sleep(3000); 
         console.log(result);
     }
+    return result;
 
 }
 
