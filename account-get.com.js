@@ -26,16 +26,16 @@ var get_account = async function(){
     var time = 10;
     var result = {};
     while (time > 0){
-        let result = await get();
+        result = await get();
+        console.log(result)
         if ("admin" in result){
             break;
         }
         time--;
         await sleep(3000); 
-        console.log(result);
     }
     return result;
 
 }
 
-get_account();
+module.exports = get_account
