@@ -1,10 +1,11 @@
 var request = require('request');
 
-var post = function (body) {
-    url = "http://192.168.217.128:12345/account";
+exports.account_post = function (body) {
+	console.log("release account: " + body.admin)
+	url = body.account_url
+	delete body.account_url
     request({url: url, json: true, method: "POST", body: body}, function (error, response, body) {
                     if (error) return reject(error);
 
                  });
 };
-
